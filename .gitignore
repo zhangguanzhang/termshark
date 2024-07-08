@@ -1,8 +1,7 @@
-Makefile
 dist/
 .vscode/
 *~
-
+termshark
 /cmd/termshark/termshark
 /typescript
 /go.work

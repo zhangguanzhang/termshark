@@ -2,16 +2,10 @@
 // code is governed by the MIT license that can be found in the LICENSE
 // file.
 
-//go:build !windows && (!linux || !arm64) && (!linux || !riscv64) && (!linux || !loong64)
-// +build !windows
-// +build !linux !arm64
-// +build !linux !riscv64
-// +build !linux !loong64
-
 package system
 
 import "syscall"
 
 func Dup2(fd int, fd2 int) error {
-	return syscall.Dup2(fd, fd2)
+	return syscall.Dup3(fd, fd2, 0)
 }
